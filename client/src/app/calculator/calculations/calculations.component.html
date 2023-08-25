@@ -1,0 +1,15 @@
+<div class="calculations_backdrop" (click)="closeCalculations.emit()">
+  <div class="calculations_wrapper">
+    <p *ngIf="!data?.length" class="calculations_empty-message">There are no registered calculations!</p>
+
+    <ul class="calculations" *ngIf="data?.length">
+      <li class="calculation" *ngFor="let calculation of data" (click)="editCalculation.emit(calculation._id)">
+        <p>Date created: {{calculation.dateCreated | date}}</p>
+        <h3>Result: {{calculation.result}}</h3>
+        <p>Expression: {{calculation.expression}}</p>
+        <button (click)="deleteCalculation.emit(calculation._id)" class="calculation_close-button">X</button>
+      </li>
+    </ul>
+    <button (click)="closeCalculations.emit()" class="calculation_close-button">X</button>
+  </div>
+</div>

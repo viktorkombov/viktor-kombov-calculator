@@ -1,0 +1,19 @@
+.notification-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  .notification {
+    border-radius: 4px;
+    position: absolute;
+    bottom: 1.5rem;
+    width: fit-content;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background: rgb(202, 73, 127);
+    p {
+      color: #fff;
+    }
+  }
+}

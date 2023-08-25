@@ -1,0 +1,22 @@
+<div class="home_container">
+  <div class="calculator">
+    <input class="input" placeholder="0" [(ngModel)]="inputValue" disabled />
+
+    <button *ngFor="let button of buttons" class="button" [value]="button.value" [class]="button.class"
+      (click)="onButtonClick(button.value)">
+      {{button.displayValue}}
+    </button>
+    <div class="loading-indicator" *ngIf="isLoading">
+      <app-loading-indicator></app-loading-indicator>
+    </div>
+  </div>
+
+</div>
+<div class="calculator_history-wrapper">
+  <h2 class="calculator_history">History</h2>
+  <button class="button" *ngIf="!calculationsOpen" (click)="openCalculations()">Open history</button>
+</div>
+<app-calculations *ngIf="calculationsOpen" [data]="calculations$ | async"
+  (deleteCalculation)="calculationDeleted($event)" (closeCalculations)="calculationsOpen = false"
+  (editCalculation)="editCalculation($event)"></app-calculations>
+<app-error-notification [message]="error" *ngIf="error" (notificationClosed)="error = ''"></app-error-notification>
