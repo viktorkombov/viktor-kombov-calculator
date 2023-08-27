@@ -7,7 +7,7 @@
         <p>Date created: {{calculation.dateCreated | date}}</p>
         <h3>Result: {{calculation.result}}</h3>
         <p>Expression: {{calculation.expression}}</p>
-        <button (click)="deleteCalculation.emit(calculation._id)" class="calculation_close-button">X</button>
+        <button (click)="onDeleteButtonClick($event, calculation._id)" class="calculation_close-button">X</button>
       </li>
     </ul>
     <button (click)="closeCalculations.emit()" class="calculation_close-button">X</button>

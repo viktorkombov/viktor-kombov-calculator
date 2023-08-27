@@ -11,4 +11,9 @@ export class CalculationsComponent {
   @Output() public deleteCalculation = new EventEmitter<string>();
   @Output() public closeCalculations = new EventEmitter();
   @Output() public editCalculation = new EventEmitter<string>();
+
+  public onDeleteButtonClick(event: Event, id: string) {
+    event.stopPropagation();
+    this.deleteCalculation.emit(id);
+  }
 }
