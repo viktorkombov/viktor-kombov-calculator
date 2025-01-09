@@ -1,6 +1,6 @@
 # Calculator App
 
-This application is a sample demonstrating how can be created a calculator with Angular and Node.js
+This project demonstrates the creation of a calculator application using Angular for the front-end and Node.js for the back-end. It highlights the integration of modern web technologies to build a responsive and functional app. The repository serves as an example of combining front-end and back-end frameworks to implement basic calculator functionalities efficiently.
 
 ## Build Setup
 
